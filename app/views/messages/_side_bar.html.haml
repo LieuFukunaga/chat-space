@@ -1,1 +1,27 @@
-<サイドバー>
+.side-bar
+  .side-bar__header
+    .side-bar__header__contents
+      %p.side-bar__header__contents__name-box わし
+      %ul.side-bar__header__contents__icons
+        %li.left-icon
+          = link_to "#" do
+            %i.far.fa-edit
+            %span<>
+        %li.right-icon
+          = link_to "#" do
+            %i.fas.fa-cog
+            %span<>
+  .side-bar__body
+    .group-list-1
+      %p.group-name テストやねん
+      %p.group-message まだないねん
+    .group-list-2
+      %p.group-name まだできてないゆうてるやろ
+      %p.group-message おこんなや
+      .side-bar__body
+    .group-list-3
+      %p.group-name インデントにきぃつけや
+      %p.group-message せやねん
+    .group-list-4
+      %p.group-name ケアレスのC
+      %p.group-message 間抜けのM
