@@ -7,13 +7,31 @@
   width: 100%;
   display: flex;
   .side-bar {
+    height: 100vh;
     width: 300px;
-    background-color: #253141;
-    height: 100%;
+    .side-bar__user-name {
+      height: 100px;
+      background-color: #253141;
+    }
+    .side-bar__group-list {
+      height: calc(100% - 100px);
+      background-color: #2f3e51;
+    }
   }
   .main-chat {
     width: calc(100vw - 300px);
-    background-color: #ffffff;
-    height: 100%;
+    height: 100vh;
+    .main-chat__group-info {
+      height: 100px;
+      background-color: #ffffff;
+    }
+    .main-chat__message-list {
+      height: calc(100vh - 190px);
+      background-color: #fafafa;
+    }
+    .main-chat__message-form {
+      height: 90px;
+      background-color: #d2d2d2;
+    }
   }
 }
