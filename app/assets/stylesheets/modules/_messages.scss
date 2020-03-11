@@ -6,64 +6,19 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  .side-bar {
-    height: 100vh;
-    width: 300px;
-    .side-bar__header {
-      height: 100px;
-      background-color: #253141;
-      display: flex;
-      align-items: center;
-      .side-bar__header__contents {
-        height: 20px;
-        width: 260px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        p.side-bar__header__contents__user-name {
-          font-size: 16px;
-          font-weight: bold;
-          line-height: 20px;
-          color :#ffffff;
-        }
-        ul.side-bar__header__contents__icons {
-          width: 60px;
-          display :flex;
-          justify-content: flex-end;
-          align-items: center;
-          list-style: none;
-
-          li.left-icon {
-            i.far.fa-edit {
-              padding-right: 5px;
-              color :#ffffff;
-            }
-          }
-          li.right-icon {
-            i.fas.fa-cog {
-              color :#ffffff;
-            }
-          }
-        }
-      }
-    }
-    .side-bar__group-list {
-      height: calc(100% - 100px);
-      background-color: #2f3e51;
-    }
-  }
+  @import "_side-bar";
   .main-chat {
     width: calc(100vw - 300px);
     height: 100vh;
-    .main-chat__group-info {
+    .main-chat__header {
       height: 100px;
       background-color: #ffffff;
     }
-    .main-chat__message-list {
+    .main-chat__body {
       height: calc(100vh - 190px);
       background-color: #fafafa;
     }
-    .main-chat__message-form {
+    .main-chat__footer {
       height: 90px;
       background-color: #d2d2d2;
     }
