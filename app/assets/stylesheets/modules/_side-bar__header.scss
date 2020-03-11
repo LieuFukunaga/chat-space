@@ -3,33 +3,32 @@
   background-color: #253141;
   display: flex;
   align-items: center;
-  .side-bar__header__contents {
+  &__contents {
     height: 20px;
     width: 260px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    p.side-bar__header__contents__user-name {
+    &__user-name {
       font-size: 16px;
       font-weight: bold;
       line-height: 20px;
       color: $color_font_side-bar;
       font-weight: bold;
     }
-    ul.side-bar__header__contents__icons {
+    &__icons {
       width: 60px;
       display :flex;
       justify-content: flex-end;
       align-items: center;
-      list-style: none;
-      li.left-icon {
+      .left-icon {
         i.far.fa-edit {
           padding-right: 5px;
           color : $color_font_side-bar;
           font-weight: bold;
         }
       }
-      li.right-icon {
+      .right-icon {
         i.fas.fa-cog {
           color : $color_font_side-bar;
           font-weight: bold;

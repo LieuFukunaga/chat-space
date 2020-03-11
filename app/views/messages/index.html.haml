@@ -6,13 +6,13 @@
     -# = render "side_bar"
     .side-bar__header
       .side-bar__header__contents
-        %p.side-bar__header__contents__user-name わし
-        %ul.side-bar__header__contents__icons
-          %li.left-icon
+        .side-bar__header__contents__user-name わし
+        .side-bar__header__contents__icons
+          .left-icon
             = link_to "#" do
               %i.far.fa-edit
               %span<>
-          %li.right-icon
+          .right-icon
             = link_to "#" do
               %i.fas.fa-cog
               %span<>
@@ -35,7 +35,10 @@
     .main-chat__header
       .main-chat__header__left-content
         .main-chat__header__left-content__group-name グループ名
-        .main-chat__header__left-content__member-name メンバー名
-      .main-chat__header__right-content Edit
+        .main-chat__header__left-content__current-member
+          .main-chat__header__left-content__current-member__member Member：
+          .main-chat__header__left-content__current-member__name わしです
+      =link_to "#" do
+        .main-chat__header__edit-button Edit
     .main-chat__body
     .main-chat__footer
