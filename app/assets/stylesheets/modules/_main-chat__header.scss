@@ -1,4 +1,23 @@
 .main-chat__header {
   height: 100px;
   background-color: #ffffff;
+  .main-chat__header__left-content {
+    height: 100%;
+    float: left;
+    padding-top: 35px;
+    padding-left: 40px;
+    .main-chat__header__left-content__group-name {
+      background-color: green;
+      color: #333333;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    .main-chat__header__left-content__member-name {
+      bottom: 0px;
+      font-size: 12px;
+    }
+  }
+  .main-chat__header__right-content {
+    float: right;
+  }
 }
