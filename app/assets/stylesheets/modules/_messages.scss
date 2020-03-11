@@ -12,6 +12,14 @@
     .side-bar__user-name {
       height: 100px;
       background-color: #253141;
+      display: flex;
+      align-items: center;
+      .side-bar__user-name__name-container {
+        height: 20px;
+        width: 260px;
+        margin: 0 auto;
+        background-color:red;
+      }
     }
     .side-bar__group-list {
       height: calc(100% - 100px);
