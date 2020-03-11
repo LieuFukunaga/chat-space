@@ -1,11 +1,11 @@
 .main-chat
   .main-chat__header
     .main-chat__header__left-content
-      .main-chat__header__left-content__group-name グループ名
-      .main-chat__header__left-content__current-member
-        .main-chat__header__left-content__current-member__member Member：
-        .main-chat__header__left-content__current-member__name わしです
+      %p.group-name グループ名
+      %ul.current-member
+        %li.member-tag Member：
+        %li.member-name わしです
     =link_to "#" do
-      .main-chat__header__edit-button Edit
+      .right-content__edit-button Edit
   .main-chat__body
   .main-chat__footer

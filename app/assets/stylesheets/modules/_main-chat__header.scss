@@ -7,20 +7,21 @@
   border-bottom: solid 1px lightgray;
   &__left-content {
     margin-top: 35px;
-    &__group-name {
+    p.group-name {
       color: #333333;
       font-size: 20px;
       margin-bottom: 15px;
     }
-    &__current-member {
+    ul.current-member {
       display: flex;
       font-size: 12px;
       color: #999999;
+      list-style: none;
     }
   }
   a {
     text-decoration: none;
-    .main-chat__header__edit-button {
+    .right-content__edit-button {
       height: 40px;
       width: 72px;
       margin: 28px 0;
