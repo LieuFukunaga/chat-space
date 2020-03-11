@@ -1,0 +1,57 @@
+.side-bar__body {
+  height: calc(100% - 100px);
+  background-color: #2f3e51;
+  padding: 20px 20px 0;
+  .group-list-1 {
+    background-color: mediumturquoise;
+    margin-bottom: 40px;
+    p.group-name {
+      color :$color_font_side-bar;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    p.group-message {
+      color :$color_font_side-bar;
+      font-size: 11px;
+    }
+  }
+  .group-list-2 {
+    background-color: blueviolet;
+    margin-bottom: 40px;
+    p.group-name {
+      color :$color_font_side-bar;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    p.group-message {
+      color :$color_font_side-bar;
+      font-size: 11px;
+    }
+  }
+  .group-list-3 {
+    background-color: coral;
+    margin-bottom: 40px;
+    p.group-name {
+      color :$color_font_side-bar;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    p.group-message {
+      color :$color_font_side-bar;
+      font-size: 11px;
+    }
+  }
+  .group-list-4 {
+    background-color: darkkhaki;
+    margin-bottom: 40px;
+    p.group-name {
+      color :$color_font_side-bar;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    p.group-message {
+      color :$color_font_side-bar;
+      font-size: 11px;
+    }
+  }
+}

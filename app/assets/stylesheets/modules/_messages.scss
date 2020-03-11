@@ -2,25 +2,23 @@
   box-sizing: border-box;
 }
 
+$color_font_side-bar: #ffffff;
+
 .wrapper {
   height: 100vh;
   width: 100%;
   display: flex;
-  @import "_side-bar";
+  .side-bar {
+    height: 100vh;
+    width: 300px;
+    @import "side-bar__header";
+    @import "side-bar__body";
+  }
   .main-chat {
     width: calc(100vw - 300px);
     height: 100vh;
-    .main-chat__header {
-      height: 100px;
-      background-color: #ffffff;
-    }
-    .main-chat__body {
-      height: calc(100vh - 190px);
-      background-color: #fafafa;
-    }
-    .main-chat__footer {
-      height: 90px;
-      background-color: #d2d2d2;
-    }
+    @import "main-chat__header";
+    @import "main-chat__body";
+    @import "main-chat__footer";
   }
 }
