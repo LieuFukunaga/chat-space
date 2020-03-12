@@ -5,7 +5,6 @@
   align-items: center;
   padding: 0 20px;
   &__contents {
-    background-color: green;
     height: 20px;
     width: 260px;
     display: flex;
@@ -17,7 +16,6 @@
       color: $color_font_side-bar;
     }
     ul.contents__icons {
-      background-color: red;
       width: 60px;
       display :flex;
       justify-content: flex-end;
