@@ -1,26 +1,28 @@
 .side-bar
   .side-bar__header
     .side-bar__header__contents
-      %p.contents__name-box わし
-      %ul.contents__icons
-        %li.left-icon
-          = link_to "#" do
-            %i.far.fa-edit
-            %span<>
-        %li.right-icon
-          = link_to "#" do
-            %i.fas.fa-cog
-            %span<>
+      %p.name-box わし
+      %p.icons
+        = link_to "#", class:"create-group-icon" do
+          %i.far.fa-edit
+          %span<>
+        = link_to "#", class:"edit-account-icon" do
+          %i.fas.fa-cog
+          %span<>
   .side-bar__body
     .group-list-1
-      %p.group-name テストやねん
+      =link_to "#", class:"group-name" do
+        テストやねん
       %p.group-message まだないねん
     .group-list-2
-      %p.group-name まだできてないゆうてるやろ
-      %p.group-message おこんなや
+      =link_to "#", class:"group-name" do
+        てすとやねん２
+      %p.group-message まだまだないねん
     .group-list-3
-      %p.group-name インデントにきぃつけや
-      %p.group-message せやねん
+      =link_to "#", class:"group-name" do
+        これもテストやねん
+      %p.group-message まだまだまだないねん
     .group-list-4
-      %p.group-name ケアレスのC
-      %p.group-message 間抜けのM
+      =link_to "#", class:"group-name" do
+        いわずもがなてすとやねん
+      %p.group-message あらしませんわ
