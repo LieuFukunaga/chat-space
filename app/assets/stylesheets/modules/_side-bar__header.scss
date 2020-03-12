@@ -9,13 +9,13 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    p.side-bar__header__contents__name-box {
+    p.contents__name-box {
       font-size: 16px;
       font-weight: bold;
       line-height: 20px;
       color: $color_font_side-bar;
     }
-    ul.side-bar__header__contents__icons {
+    ul.contents__icons {
       width: 60px;
       display :flex;
       justify-content: flex-end;
