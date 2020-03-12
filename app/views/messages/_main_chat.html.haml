@@ -1,0 +1,28 @@
+.main-chat
+  .main-chat__header
+    .main-chat__header__left-content
+      %p.group-name グループ名
+      %ul.current-member
+        %li.member-tag Member：
+        %li.member-name わしです
+    =link_to "#", class:"edit-button" do
+      Edit
+  .main-chat__body
+    .message-1
+      %ul.message-info
+        %li.user-name moi
+        %li.time-stamp 2020/03/12(Thu) 11:00:00
+      %p.message-content chez moi
+    .message-2
+      %ul.message-info
+        %li.user-name toi
+        %li.time-stamp 2020/03/12(Thu) 12:38:00
+      %p.message-content quelque chose
+  .main-chat__form
+    %form.message-container
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          =icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit",class: "submit-btn", value:"Send"}

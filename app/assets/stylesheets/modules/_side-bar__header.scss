@@ -1,0 +1,38 @@
+.side-bar__header {
+  height: 100px;
+  background-color: #253141;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  &__contents {
+    height: 20px;
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    p.name-box {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 20px;
+      color: $color_font_side-bar;
+    }
+    p.icons {
+      width: 60px;
+      display :flex;
+      justify-content: flex-end;
+      align-items: center;
+      a.create-group-icon {
+        text-decoration: none;
+        i.far.fa-edit {
+          padding-right: 5px;
+          color : $color_font_side-bar;
+        }
+      }
+      a.edit-account-icon {
+        text-decoration: none;
+        i.fas.fa-cog {
+          color : $color_font_side-bar;
+        }
+      }
+    }
+  }
+}
