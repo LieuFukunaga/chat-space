@@ -1,3 +1,17 @@
+@mixin group_name {
+  text-decoration: none;
+  color :$color_font_side-bar;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+@mixin group_message {
+  color :$color_font_side-bar;
+  font-size: 11px;
+}
+
+
+
 .side-bar__body {
   height: calc(100% - 100px);
   background-color: #2f3e51;
@@ -5,53 +19,37 @@
   .group-list-1 {
     margin-bottom: 40px;
     a.group-name {
-      text-decoration: none;
-      color :$color_font_side-bar;
-      font-size: 15px;
-      margin-bottom: 5px;
+      @include group_name;
     }
     p.group-message {
-      color :$color_font_side-bar;
-      font-size: 11px;
+      @include group_message;
     }
   }
   .group-list-2 {
     margin-bottom: 40px;
     a.group-name {
-      text-decoration: none;
-      color :$color_font_side-bar;
-      font-size: 15px;
-      margin-bottom: 5px;
+      @include group_name;
     }
     p.group-message {
-      color :$color_font_side-bar;
-      font-size: 11px;
+      @include group_message;
     }
   }
   .group-list-3 {
     margin-bottom: 40px;
     a.group-name {
-      text-decoration: none;
-      color :$color_font_side-bar;
-      font-size: 15px;
-      margin-bottom: 5px;
+      @include group_name;
     }
     p.group-message {
-      color :$color_font_side-bar;
-      font-size: 11px;
+      @include group_message;
     }
   }
   .group-list-4 {
     margin-bottom: 40px;
     a.group-name {
-      text-decoration: none;
-      color :$color_font_side-bar;
-      font-size: 15px;
-      margin-bottom: 5px;
+      @include group_name;
     }
     p.group-message {
-      color :$color_font_side-bar;
-      font-size: 11px;
+      @include group_message;
     }
   }
 }
