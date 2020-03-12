@@ -12,12 +12,17 @@
       %ul.message-info
         %li.user-name わし
         %li.time-stamp 2020/03/12(Thu) 11:00:00
-      %p.message-content めぇーせぇーじぃー
+      %p.message-content からのめぇーせぇーじぃー
     .message-2
       %ul.message-info
         %li.user-name おのれ
         %li.time-stamp 2020/03/12(Thu) 12:38:00
-      %p.message-content おのれのみじゅくさをしりました。
-
-
-  .main-chat__footer
+      %p.message-content わしはおのれのみじゅくさをしっておのれにしんかしました。
+  .main-chat__form
+    %form.message-container
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          =icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit",class: "submit-btn", value:"Send"}
