@@ -4,7 +4,7 @@
       %p.name-box
         = current_user.name
       %p.icons
-        = link_to "#", class:"create-group-icon" do
+        = link_to groups_path, method: :post, class:"create-group-icon" do
           %i.far.fa-edit
           %span<>
         = link_to edit_user_path(current_user), class:"edit-account-icon" do
