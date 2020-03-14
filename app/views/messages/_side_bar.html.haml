@@ -4,26 +4,16 @@
       %p.name-box
         = current_user.name
       %p.icons
-        = link_to groups_path, method: :post, class:"create-group-icon" do
+        = link_to new_group_path, method: :get, class:"create-group-icon" do
           %i.far.fa-edit
           %span<>
         = link_to edit_user_path(current_user), class:"edit-account-icon" do
           %i.fas.fa-cog
           %span<>
   .side-bar__body
-    .group-list-1
-      =link_to "#", class:"group-name" do
-        1
-      %p.group-message il n'y a pas le message
-    .group-list-2
-      =link_to "#", class:"group-name" do
-        due
-      %p.group-message no message
-    .group-list-3
-      =link_to "#", class:"group-name" do
-        trois
-      %p.group-message on y va
-    .group-list-4
-      =link_to "#", class:"group-name" do
-        quatre
-      %p.group-message aujourd'hui, il fait froid!
+    - current_user.groups.each do |group|
+      .group
+        =link_to '#', class:"group__name" do
+          = group.name
+        %p.group__message
+          メッセージはまだありません
