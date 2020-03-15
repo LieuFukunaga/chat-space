@@ -1,4 +1,5 @@
 .main-chat
+
   .main-chat__header
     .main-chat__header__left-content
       %p.group-name グループ名
@@ -7,7 +8,32 @@
         %li.member-name わしです
     =link_to "#", class:"edit-btn" do
       Edit
+
   .main-chat__body
+    = render @messages
+
+
+  .main-chat__form
+    = form_for [@group, @message] do |f|
+      .input-box
+        = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+        = f.label :image, class: 'form__image' do
+          %i.fa.fa-image
+          = f.file_field :image, class: 'form__file'
+      =f.submit 'Send', class: 'submit-btn'
+
+
+-# Before
+    -# %form.message-container
+    -#   .input-box
+    -#     %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+    -#     %label{class: "input-box__image"}
+    -#       =icon('fas', 'image')
+    -#       %input{type: "file", class: "input-box__image__file"}
+    -#   %input{type: "submit",class: "submit-btn", value:"Send"}
+
+
+
   -#   .message-1
   -#     %ul.message-info
   -#       %li.user-name moi
@@ -18,11 +44,3 @@
   -#       %li.user-name toi
   -#       %li.time-stamp 2020/03/12(Thu) 12:38:00
   -#     %p.message-content quelque chose
-  .main-chat__form
-    %form.message-container
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          =icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit",class: "submit-btn", value:"Send"}

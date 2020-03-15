@@ -13,7 +13,7 @@
   .side-bar__body
     - current_user.groups.each do |group|
       .group
-        =link_to '#', class:"group__name" do
+        =link_to group_messages_path(group), class:"group__name" do
           = group.name
         %p.group__message
           メッセージはまだありません
