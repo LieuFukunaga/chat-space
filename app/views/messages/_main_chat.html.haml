@@ -2,10 +2,14 @@
 
   .main-chat__header
     .main-chat__header__left-content
-      %p.group-name グループ名
-      %ul.current-member
-        %li.member-tag Member：
-        %li.member-name わしです
+      %p.group-name
+        = @group.name
+      %ul.members
+        %p.member-tag Member：
+        %p.member-name
+          - @users.each do |user|
+            %li
+              = user.name
     =link_to "#", class:"edit-btn" do
       Edit
 
