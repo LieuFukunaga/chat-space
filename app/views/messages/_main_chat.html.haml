@@ -10,9 +10,8 @@
           - @users.each do |user|
             %li
               = user.name
-    =link_to "#", class:"edit-btn" do
+    = link_to edit_group_path(@group.id), class:"edit-btn" do
       Edit
-
   .main-chat__body
     = render @messages
 
@@ -25,6 +24,27 @@
           %i.fa.fa-image
           = f.file_field :image, class: 'form__file'
       =f.submit 'Send', class: 'submit-btn'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 -# Before
