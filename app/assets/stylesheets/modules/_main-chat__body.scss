@@ -19,36 +19,36 @@
   height: calc(100vh - 190px);
   background-color: #fafafa;
   padding-left: 40px;
-  .message-1 {
+  .message {
     padding: 35px 0px 46px;
-    ul.message-info {
+    .upper-message {
       display: flex;
       margin-bottom: 12px;
-        li.user-name {
+        .user-name {
           @include user_name;
         }
-        li.time-stamp {
+        .time-stamp {
           @include time-stamp;
         }
     }
-    p.message-content {
+    .lower-message {
       @include message-content;
     }
   }
-  .message-2 {
-    padding: 35px 0px 46px;
-    ul.message-info {
-      display: flex;
-      margin-bottom: 12px;
-        li.user-name {
-          @include user_name;
-        }
-        li.time-stamp {
-          @include time-stamp;
-        }
-    }
-    p.message-content {
-      @include message-content;
-    }
-  }
+  // .message-2 {
+  //   padding: 35px 0px 46px;
+  //   ul.message-info {
+  //     display: flex;
+  //     margin-bottom: 12px;
+  //       li.user-name {
+  //         @include user_name;
+  //       }
+  //       li.time-stamp {
+  //         @include time-stamp;
+  //       }
+  //   }
+  //   p.message-content {
+  //     @include message-content;
+  //   }
+  // }
 }

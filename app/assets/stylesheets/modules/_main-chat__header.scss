@@ -12,11 +12,14 @@
       font-size: 20px;
       margin-bottom: 15px;
     }
-    ul.current-member {
+    ul.members {
       display: flex;
       font-size: 12px;
       color: #999999;
       list-style: none;
+      li {
+        padding-right: 5px;
+      }
     }
   }
   a.edit-btn{
