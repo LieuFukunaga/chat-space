@@ -1,10 +1,10 @@
 class MessagesController < ApplicationController
   before_action :set_group
+  before_action :set_users
 
   def index
-    @message =Message.new
+    @message = Message.new
     @messages = @group.messages.includes(:user)
-    @users = @group.users
   end
 
   def create
@@ -14,6 +14,8 @@ class MessagesController < ApplicationController
     else
       @messages = @group.messages.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください'
+      # renderは直接viewに飛ぶ！indexでインスタンス変数を定義しても、その処理を介さない
+      # よって、値を受け取れない
       render :index
     end
   end
@@ -25,5 +27,9 @@ class MessagesController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
+  end
+
+  def set_users
+    @users = @group.users
   end
 end
