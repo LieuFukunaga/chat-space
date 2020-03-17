@@ -64,15 +64,34 @@ describe MessagesController do
       end
 
       context 'can not save' do
-      end
+        let(:invalid_params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message, body: nil, image: nil) } }
 
+        subject {
+          post :create,
+          params: invalid_params
+        }
+
+        it 'does not count up' do
+          expect{ subject }.not_to change(Message, :count)
+        end
+
+        it 'renders index' do
+          subject
+          expect(response).to render_template :index
+        end
+      end
     end
 
     context 'not log in' do
       before do
         get :create, params: params
       end
-    end
 
+      it 'redirects to new_user_session_path' do
+        post :create, params: params
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
   end
+
 end
