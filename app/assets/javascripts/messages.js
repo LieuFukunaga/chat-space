@@ -24,6 +24,7 @@ $(function() {
         </div>`
       return html;
     } else {
+      let html=
       `<div class="message">
           <div class="upper-message">
             <div class="user-name">
@@ -53,10 +54,13 @@ $(function() {
       data: formData,
       dataType: 'json',
       processData: false,
-      contentType: false,
+      contentType: false
     })
     .done(function(data){
-      var html = buildHTML(data);
+      let html = buildHTML(data);
+      $('.main-chat__body').append(html);
+      $('.main-chat__body').animate({scrollTop: $('.main-chat__body')[0].scrollHeight});
+      $('form')[0].reset();
     })
-  })
+  });
 });
