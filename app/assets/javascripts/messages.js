@@ -1,11 +1,7 @@
 $(function() {
   function buildHTML(message){
-    // jbuilderから返されたデータにimageが在る場合（＝画像を投稿した場合）
     if( message.image ) {
       let html =
-      // ① 該当箇所をCopy element
-      // ② 階層構造を整える
-      // ③ <%= %>を書き換え
         `<div class="message">
           <div class="upper-message">
             <div class="user-name">
@@ -44,6 +40,11 @@ $(function() {
     };
   }
 
+  function reactivateSubmit(){
+    $(".submit-btn").prop('disabled', false);
+  end
+  }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData(this);
@@ -58,9 +59,14 @@ $(function() {
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.main-chat__body').append(html);
-      $('.main-chat__body').animate({scrollTop: $('.main-chat__body')[0].scrollHeight});
-      $('form')[0].reset();
+      $(".main-chat__body").append(html);
+      $('.main-chat__body').animate({ scrollTop: $('.main-chat__body')[0].scrollHeight});
+      $("form")[0].reset();
+      activateSubmit();
     })
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+      activateSubmit();
   });
+  })
 });
