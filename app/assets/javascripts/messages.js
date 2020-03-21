@@ -90,20 +90,24 @@ $(function() {
   let reloadMessages = function () {
     let last_message_id = $('.message:last').data("message-id");
     $.ajax({
-      url: "api/messagess",
+      url: "api/messages",
       type: "get",
       dataType: "json",
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      let insertHTML = '';
-      $.each(messages, function(i, message){
-        insertHTML += buildHTML(message)
-      });
-      $('.messages').append(insertHTML);
+      if (messages.length !== 0) {
+        let insertHTML = '';
+        $.each(messages, function(i, message){
+          insertHTML += buildHTML(message)
+        });
+        $('.').append(insertHTML);
+        $('main-chat__body').animate({ scrollTop: $('main-chat__body')[0].scrollHeight});
+      }
     })
     .fail(function(){
       alert("error");
     });
   };
+  setInterval(reloadMessages, 7000);
 });
