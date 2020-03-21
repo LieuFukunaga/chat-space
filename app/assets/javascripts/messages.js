@@ -101,15 +101,14 @@ $(function() {
         $.each(messages, function(i, message){
           insertHTML += buildHTML(message)
         });
-        $('.').append(insertHTML);
-        $('main-chat__body').animate({ scrollTop: $('main-chat__body')[0].scrollHeight});
+        $('.main-chat__body').append(insertHTML);
+        $('.main-chat__body').animate({ scrollTop: $('main-chat__body')[0].scrollHeight});
       }
     })
     .fail(function(){
       alert("error");
     });
   };
-  // /groups/グループid/messagesをエスケープシーケンスで表現している
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
   }
