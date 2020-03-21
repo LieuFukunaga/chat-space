@@ -5,58 +5,58 @@ $(function() {
     // formDataにbodyとimageがある場合（＝文字と写真が投稿された場合）
     if( message.body && message.image ) {
       let html =
-      `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="upper-message">` +
-          `<div class="user-name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="date">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="lower-message">` +
-          `<p class="lower-message__body">` +
-            message.body +
-          `</p>` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>` +
-      `</div>`
+      `<div class="message" data-message-id= ${message.id} >
+        <div class="upper-message">
+          <div class="user-name">
+            ${message.user_name}
+          </div>
+          <div class="date">
+            ${message.created_at}
+          </div>
+        </div>
+        <div class="lower-message">
+          <p class="lower-message__body">
+            ${message.body}
+          </p>
+          <img src=" ${message.image} " class="lower-message__image" >
+        </div>
+      </div>`
       return html;
     // 文字だけの投稿の場合
     } else if (message.body) {
       let html =
-      `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="upper-message">` +
-          `<div class="user-name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="date">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="lower-message">` +
-          `<p class="lower-message__body">` +
-            message.body +
-          `</p>` +
-        `</div>` +
-      `</div>`
+      `<div class="message" data-message-id= ${message.id} >
+        <div class="upper-message">
+          <div class="user-name">
+          ${message.user_name}
+          </div>
+          <div class="date">
+            ${message.created_at}
+          </div>
+        </div>
+        <div class="lower-message">
+          <p class="lower-message__body">
+            ${message.body}
+          </p>
+        </div>
+      </div>`
       return html;
     // 画像だけの投稿の場合
     } else if (message.image) {
       let html =
-      `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="upper-message">` +
-          `<div class="user-name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="date">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="lower-message">` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>` +
-      `</div>`
+      `<div class="message" data-message-id= ${message.id} >
+        <div class="upper-message">
+          <div class="user-name">
+            ${message.user_name}
+          </div>
+          <div class="date">
+            ${message.created_at}
+          </div>
+        </div>
+        <div class="lower-message">
+          <img src="${message.image}" class="lower-message__image" >
+        </div>
+      </div>`
       return html;
     };
   };
