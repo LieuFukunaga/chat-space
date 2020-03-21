@@ -1,20 +1,19 @@
 $(function() {
   let last_message_id = $('.message:last').data("message-id");
-  function buildHTML(data){
-    let upperMessage =
-    `<div class="upper-message">` +
-      `<div class="user-name">` +
-        message.user_name +
-      `</div>` +
-      `<div class="date">` +
-        message.created_at +
-      `</div>` +
-    `</div>`
+  function buildHTML(message){
 
     // formDataにbodyとimageがある場合（＝文字と写真が投稿された場合）
     if( message.body && message.image ) {
-      let html = `<div class="message" data-message-id=` + message.id + `>` +
-        upperMessage +
+      let html =
+      `<div class="message" data-message-id=` + message.id + `>` +
+        `<div class="upper-message">` +
+          `<div class="user-name">` +
+            message.user_name +
+          `</div>` +
+          `<div class="date">` +
+            message.created_at +
+          `</div>` +
+        `</div>` +
         `<div class="lower-message">` +
           `<p class="lower-message__body">` +
             message.body +
@@ -22,29 +21,45 @@ $(function() {
           `<img src="` + message.image + `" class="lower-message__image" >` +
         `</div>` +
       `</div>`
-
+      return html;
     // 文字だけの投稿の場合
     } else if (message.body) {
-      let html = `<div class="message" data-message-id=` + message.id + `>` +
-        upperMessage +
+      let html =
+      `<div class="message" data-message-id=` + message.id + `>` +
+        `<div class="upper-message">` +
+          `<div class="user-name">` +
+            message.user_name +
+          `</div>` +
+          `<div class="date">` +
+            message.created_at +
+          `</div>` +
+        `</div>` +
         `<div class="lower-message">` +
           `<p class="lower-message__body">` +
-            message.content +
+            message.body +
           `</p>` +
         `</div>` +
       `</div>`
-
+      return html;
     // 画像だけの投稿の場合
     } else if (message.image) {
-      let html = `<div class="message" data-message-id=` + message.id + `>` +
-        upperMessage
+      let html =
+      `<div class="message" data-message-id=` + message.id + `>` +
+        `<div class="upper-message">` +
+          `<div class="user-name">` +
+            message.user_name +
+          `</div>` +
+          `<div class="date">` +
+            message.created_at +
+          `</div>` +
+        `</div>` +
         `<div class="lower-message">` +
           `<img src="` + message.image + `" class="lower-message__image" >` +
         `</div>` +
       `</div>`
+      return html;
     };
-    return html;
-  }
+  };
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
