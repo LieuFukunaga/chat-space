@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'devise'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,7 +43,6 @@ group :development, :test do
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'haml-rails'
   gem 'font-awesome-sass'
-  gem 'devise'
   gem 'pry-rails'
   gem 'carrierwave'
   gem 'mini_magick'
