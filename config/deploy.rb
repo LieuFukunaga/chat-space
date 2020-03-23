@@ -1,9 +1,9 @@
 # config valid for current version and patch releases of Capistrano
 
 # capistranoのバージョンを記載。固定のバージョンを利用し続け、バージョン変更によるトラブルを防止する
-# lock "3.12.1"
+lock "3.12.1"
 # before
-lock "~> 3.12.1"
+# lock "~> 3.12.1"
 
 set :application, "chat-space"
 
