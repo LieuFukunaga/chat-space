@@ -11,7 +11,6 @@
       = f.label :name, class: 'chat-group-form__label'
     .chat-group-form__field--right
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
-
   .chat-group-form__field
     .chat-group-form__field--left
       %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加
@@ -24,12 +23,23 @@
     .chat-group-form__field--left
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right
+      
       #chat-group-users.js-add-user
         .chat-group-user.clearfix.js-chat-member#chat-group-user-8
           %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
             %p.chat-group-user__name= current_user.name
+      
+      // 修正箇所
+      // groupsテーブルを通して取得したusersテーブルのデータ（配列）に対して、if current_user.name != user.nameがtrueでありかぎり繰り返しの処理を行う
+      - group.users.each do |user|
+        - if current_user.name != user.name
+          .chat-group-user.clearfix.js-chat-member
+            %input{name: "group[user_ids][]", type: "hidden", value: user.id}
+            %p.chat-group-user__name
+              = user.name
+            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+              削除
 
-  // 「更新する」ボタン周り
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
