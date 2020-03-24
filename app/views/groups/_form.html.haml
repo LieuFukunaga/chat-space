@@ -23,13 +23,12 @@
     .chat-group-form__field--left
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right
-      
+
       #chat-group-users.js-add-user
         .chat-group-user.clearfix.js-chat-member#chat-group-user-8
           %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
             %p.chat-group-user__name= current_user.name
-      
-      // 修正箇所
+
       // groupsテーブルを通して取得したusersテーブルのデータ（配列）に対して、if current_user.name != user.nameがtrueでありかぎり繰り返しの処理を行う
       - group.users.each do |user|
         - if current_user.name != user.name
